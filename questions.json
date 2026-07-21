@@ -1,0 +1,14 @@
+[
+  {"text":"Most popular baby boy name of all time (Western countries)?","answers":["Michael","John","James","Robert"],"correctIndex":2,"order":1},
+  {"text":"How many bones are babies born with? (Adults have 206)","answers":["270-300","200-250","310-340","350-380"],"correctIndex":0,"order":2},
+  {"text":"Which month has the highest number of birthdays worldwide?","answers":["December","April","May","August"],"correctIndex":3,"order":3},
+  {"text":"How many times is the word \"baby\" sung in Justin Bieber's \"Baby\"?","answers":["62","55","44","70"],"correctIndex":1,"order":4},
+  {"text":"First colours/shades a baby can see?","answers":["Black, red and green","Black, white and red","Red, yellow and blue","Black, white and blue"],"correctIndex":1,"order":5},
+  {"text":"Valentina Vassilyeva's record for most babies birthed (1725-1765)?","answers":["58","50","32","69"],"correctIndex":3,"order":6},
+  {"text":"When does a baby develop fingerprints?","answers":["3 months in pregnancy","6 months in pregnancy","3 months after birth","6 months after birth"],"correctIndex":0,"order":7},
+  {"text":"What animal commonly gives birth to twins?","answers":["Kangaroos","Elephants","Pandas","Rhinos"],"correctIndex":2,"order":8},
+  {"text":"What can a baby do up until 7 months that an adult cannot?","answers":["Sleep with eyes open","Breathe and swallow at the same time","Know time in windowless room","Control body temperature"],"correctIndex":1,"order":9},
+  {"text":"What singer played her own music in the delivery room for her twins' birth?","answers":["Jennifer Lopez","Christina Aguilera","Beyoncé","Mariah Carey"],"correctIndex":3,"order":10},
+  {"text":"What do you call a baby crocodile?","answers":["Kit","Hatchling","Pup","Puggle"],"correctIndex":1,"order":11},
+  {"text":"Heaviest weight recorded for a baby born naturally (1955, Italian woman)?","answers":["19 lbs","15 lbs","22 lbs","28 lbs"],"correctIndex":2,"order":12}
+]
