@@ -10,7 +10,7 @@ body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f7f4e
 <body><main class="load"><div class="mark">🐢</div><h1>Baby Shower Trivia</h1><p id="status">Loading game…</p></main>
 <script>
 const SOURCE='https://rachel-ethan-baby-shower-default-rtdb.firebaseio.com/deploy/reloadSafeIndex.json';
-const EXPECTED='0d57f17ae41db8cee6ed357151c8266d4cb5ae1e2516436db3bc97c092ecf2be';
+const EXPECTED='24a99130904ca5a4a2dbefc57fcc5309701881b1381a3e70a2f47f013dab351c';
 const status=document.getElementById('status');
 async function sha256(text){const data=new TextEncoder().encode(text);const digest=await crypto.subtle.digest('SHA-256',data);return Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join('')}
 async function boot(){try{status.textContent='Loading game…';const response=await fetch(SOURCE,{cache:'no-store'});if(!response.ok)throw new Error('Game download failed');const html=await response.json();if(typeof html!=='string'||!html.includes('loadingView'))throw new Error('Game package is invalid');if(await sha256(html)!==EXPECTED)throw new Error('Game integrity check failed');document.open();document.write(html);document.close()}catch(error){console.error(error);status.textContent='The game could not load. Please refresh.'}}
