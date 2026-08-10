@@ -4,14 +4,14 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Rachel & Ethan · Baby Shower Trivia</title>
 <style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f7f4ec;color:#16323d;font-family:system-ui,-apple-system,Segoe UI,sans-serif}.load{text-align:center;padding:28px}.mark{width:58px;height:58px;margin:0 auto 14px;border-radius:19px;background:#e3f4ef;display:grid;place-items:center;color:#2d7d76;font-size:2rem;overflow:hidden;box-shadow:0 8px 22px rgba(24,49,59,.12)}.mark img{width:100%;height:100%;object-fit:cover;display:block}h1{font-size:1.45rem;margin:0 0 8px}p{color:#6f858d;font-weight:700;margin:0}
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f4f4ec;color:#26382f;font-family:system-ui,-apple-system,Segoe UI,sans-serif}.load{text-align:center;padding:28px}.mark{width:58px;height:58px;margin:0 auto 14px;border-radius:19px;background:#e5ece3;display:grid;place-items:center;color:#415143;font-size:2rem;overflow:hidden;box-shadow:0 8px 22px rgba(38,56,47,.12)}.mark img{width:100%;height:100%;object-fit:cover;display:block}h1{font-size:1.45rem;margin:0 0 8px}p{color:#687d72;font-weight:700;margin:0}
 </style>
 </head>
 <body><main class="load"><div class="mark"><span id="markFallback">🐢</span><img id="markImg" alt="" hidden></div><h1>Baby Shower Trivia</h1><p id="status">Loading game…</p></main>
 <script>
 const SOURCE='https://rachel-ethan-baby-shower-default-rtdb.firebaseio.com/deploy/reloadSafeIndex.json';
 const LOGO='https://rachel-ethan-baby-shower-default-rtdb.firebaseio.com/deploy/turtleLogo.json';
-const EXPECTED='c5ee67abf7f6779d25165308c5fa1f2c677912c00b3893987b5daf59ceacf686';
+const EXPECTED='9aeb7d78ec7391ae6766a4f13f5b8ba196efe3d099a0e9cef26bcbd724d7fed8';
 const status=document.getElementById('status');
 fetch(LOGO,{cache:'force-cache'}).then(r=>r.ok?r.json():null).then(logo=>{if(typeof logo==='string'&&logo.startsWith('data:image/')){const img=document.getElementById('markImg');img.src=logo;img.hidden=false;document.getElementById('markFallback').hidden=true}}).catch(()=>{});
 async function sha256(text){const data=new TextEncoder().encode(text);const digest=await crypto.subtle.digest('SHA-256',data);return Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join('')}
