@@ -11,7 +11,7 @@ body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f4f4e
 <script>
 const SOURCE='https://rachel-ethan-baby-shower-default-rtdb.firebaseio.com/deploy/reloadSafeIndex.json';
 const LOGO='https://rachel-ethan-baby-shower-default-rtdb.firebaseio.com/deploy/turtleLogo.json';
-const EXPECTED='bb706d30f9abd9aa16f16070373cbea42d61240b94abacd6c66bce5454274f69';
+const EXPECTED='c1963e51c9bb572976791b5f5db1b1148d415ad8260f909930e7cf8df1008eec';
 const status=document.getElementById('status');
 fetch(LOGO,{cache:'force-cache'}).then(r=>r.ok?r.json():null).then(logo=>{if(typeof logo==='string'&&logo.startsWith('data:image/')){const img=document.getElementById('markImg');img.src=logo;img.hidden=false;document.getElementById('markFallback').hidden=true}}).catch(()=>{});
 async function sha256(text){const data=new TextEncoder().encode(text);const digest=await crypto.subtle.digest('SHA-256',data);return Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join('')}
