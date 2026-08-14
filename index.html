@@ -11,11 +11,11 @@ body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f4f4e
 <script>
 const SOURCE='https://rachel-ethan-baby-shower-default-rtdb.firebaseio.com/deploy/reloadSafeIndex.json';
 const LOGO='https://rachel-ethan-baby-shower-default-rtdb.firebaseio.com/deploy/turtleLogo.json';
-const EXPECTED='c1963e51c9bb572976791b5f5db1b1148d415ad8260f909930e7cf8df1008eec';
+const EXPECTED=['c1963e51c9bb572976791b5f5db1b1148d415ad8260f909930e7cf8df1008eec','c527bfce2a778366ae905e3d5dd2597c3215ac0f9a3d1113c5efce60069e8860'];
 const status=document.getElementById('status');
 fetch(LOGO,{cache:'force-cache'}).then(r=>r.ok?r.json():null).then(logo=>{if(typeof logo==='string'&&logo.startsWith('data:image/')){const img=document.getElementById('markImg');img.src=logo;img.hidden=false;document.getElementById('markFallback').hidden=true}}).catch(()=>{});
 async function sha256(text){const data=new TextEncoder().encode(text);const digest=await crypto.subtle.digest('SHA-256',data);return Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join('')}
-async function boot(){try{status.textContent='Loading game…';const response=await fetch(SOURCE,{cache:'no-store'});if(!response.ok)throw new Error('Game download failed');const html=await response.json();if(typeof html!=='string'||!html.includes('loadingView'))throw new Error('Game package is invalid');if(await sha256(html)!==EXPECTED)throw new Error('Game integrity check failed');document.open();document.write(html);document.close()}catch(error){console.error(error);status.textContent='The game could not load. Please refresh.'}}
+async function boot(){try{status.textContent='Loading game…';const response=await fetch(SOURCE,{cache:'no-store'});if(!response.ok)throw new Error('Game download failed');const html=await response.json();if(typeof html!=='string'||!html.includes('loadingView'))throw new Error('Game package is invalid');if(!EXPECTED.includes(await sha256(html)))throw new Error('Game integrity check failed');document.open();document.write(html);document.close()}catch(error){console.error(error);status.textContent='The game could not load. Please refresh.'}}
 boot();
 </script>
 </body>
